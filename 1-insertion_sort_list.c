@@ -7,29 +7,31 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t tmp = *list;
+	listint_t *tmp = *list;
 	int sorted;
 
 	sorted = 0;
 	if (!list || !(*list))
-	return
+	return;
 
 	while (!sorted)
 	{
 		sorted = 1;
 		while(tmp)
 		{
+			if (tmp->next)
 			if (tmp->n > tmp->next->n)
 			{
 				sorted = 0;
-				swap(tmp->n, tmp->next->n);
+				swap(tmp, tmp->next);
 				print_list(*list);
 				tmp = tmp->prev;
 				while (tmp)
 				{
+					if (tmp->prev)
 					if (tmp->n < tmp->prev->n)
 					{
-						swap(tmp->n, tmp->prev->n);
+						swap(tmp, tmp->prev);
 						print_list(*list);
 					}
 					tmp = tmp->prev;
@@ -47,14 +49,19 @@ void insertion_sort_list(listint_t **list)
  * @first: first nodes
  * @sec: second node
  */
-void swap(listint_t first, listint_t sec)
+void swap(listint_t *first, listint_t *sec)
 {
-	listint_t tmp;
+	listint_t *tmp;
 
+	if (first->prev)
+	first->prev->next = sec;
+	if (sec->next)
+	sec->next->prev = first;
 	tmp = first->next;
 	first->next = sec->next;
 	sec->next = tmp;
 	tmp = first->prev;
 	first->prev = sec->prev;
 	sec->prev = tmp;
+
 }
