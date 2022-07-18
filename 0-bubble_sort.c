@@ -7,14 +7,15 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-	int sorted, c, tmp;
+	int sorted, tmp;
+	size_t c;
 
 	sorted = 0;
 	while (!sorted)
 	{
+		sorted = 1;
 		for (c = 0; c < (size - 1); c++)
 		{
-			sorted = 1;
 			if (*(array + c) > *(array + c + 1))
 			{
 				tmp = *(array + c);
