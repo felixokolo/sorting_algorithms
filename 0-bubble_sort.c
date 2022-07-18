@@ -21,6 +21,7 @@ void bubble_sort(int *array, size_t size)
 				*(array + c) = *(array + c + 1);
 				*(array + c + 1) = tmp;
 				sorted = 0;
+				print_array(array, size);
 			}
 		}
 	}
