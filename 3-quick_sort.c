@@ -17,7 +17,7 @@ void quick_sort(int *array, size_t size)
 			tmp = *(array + i);
 			*(array + i) = *(array + j);
 			*(array + j) = tmp;
-			dir = dir == 0? 1 : 0;
+			dir = dir == 0 ? 1 : 0;
 			if (dir == 0)
 			j--;
 			else
