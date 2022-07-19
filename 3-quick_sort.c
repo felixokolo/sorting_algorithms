@@ -53,7 +53,7 @@ int partition(int *array, size_t size, int lo, int hi)
 		{
 			if (idx != xdi)
 			{
-				swap(&array[idx], &array[xdi]);
+				swap2(&array[idx], &array[xdi]);
 				print_array(array, size);
 			}
 			idx++;
@@ -61,20 +61,20 @@ int partition(int *array, size_t size, int lo, int hi)
 	}
 	if (pivot != array[idx])
 	{
-		swap(&array[idx], &array[hi]);
+		swap2(&array[idx], &array[hi]);
 		print_array(array, size);
 	}
 	return (idx);
 }
 
 /**
- * swap - swaps the address values of two pointers
+ * swap2 - swaps the address values of two pointers
  * @ptr_a: pointer to integer
  * @ptr_b: pointer to integer
  *
  * Return: nothing!
  */
-void swap(int *ptr_a, int *ptr_b)
+void swap2(int *ptr_a, int *ptr_b)
 {
 	int tmp;
 
