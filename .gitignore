@@ -1,0 +1,8 @@
+0-main.c
+*.o
+.*
+!.gitignore
+*.exe
+*.layout
+*win
+*dev
